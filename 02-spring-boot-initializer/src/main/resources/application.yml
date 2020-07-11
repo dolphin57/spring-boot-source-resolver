@@ -10,3 +10,7 @@ mybatis:
   type-aliases-package: io.dolphin.initializer.bean
   configuration:
     map-underscore-to-camel-case: true
+
+context:
+  initializer:
+    classes: io.dolphin.initializer.initializer.ThirdInitializer
