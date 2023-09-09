@@ -7,11 +7,13 @@
     <groupId>io.dolphin</groupId>
     <artifactId>spring-boot-source-resolver</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>spring-boot-source-resolver</name>
     <description>Spring Boot源码解析系列</description>
 
     <modules>
         <module>01-spring-boot-source-demo</module>
+        <module>02-spring-boot-initializer</module>
     </modules>
 </project>
