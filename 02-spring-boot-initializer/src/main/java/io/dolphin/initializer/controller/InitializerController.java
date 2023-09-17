@@ -1,15 +1,11 @@
 package io.dolphin.initializer.controller;
 
-import io.dolphin.initializer.bean.Demo;
-import io.dolphin.initializer.service.DemoService;
 import io.dolphin.initializer.service.InitializerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.Optional;
 
 /**
  * @Description:
@@ -18,22 +14,18 @@ import java.util.Optional;
  */
 @Controller
 @RequestMapping("/demo")
-public class DemoController {
-    @Autowired
-    private DemoService demoService;
-
+public class InitializerController {
     @Autowired
     private InitializerService initializerService;
 
-    @RequestMapping("/hello/{id}")
+    /**
+     * 属性输出, key1--first，key2--second，key3--third
+     * http://localhost:8080/demo/initializer/key2
+     * @return
+     */
+    @RequestMapping("/initializer/{key}")
     @ResponseBody
-    public String hello(@PathVariable(value = "id")Long id) {
-        return Optional.ofNullable(demoService.getDemoById(id)).map(Demo::toString).orElse("empty String");
-    }
-
-    @RequestMapping("/initializer")
-    @ResponseBody
-    public String initializer() {
-        return initializerService.initializer();
+    public String initializer(@PathVariable(value = "key")String key) {
+        return initializerService.initializer(key);
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * @Description:
+ * @Description: 初始化器:注入自定义属性
  * @Author: Eric Liang
  * @Since: 2020-7-11 10:46
  */
@@ -19,7 +19,7 @@ public class InitializerService implements ApplicationContextAware {
         this.applicationContext = applicationContext;
     }
 
-    public String initializer() {
-        return applicationContext.getEnvironment().getProperty("key3");
+    public String initializer(String key) {
+        return applicationContext.getEnvironment().getProperty(key);
     }
 }

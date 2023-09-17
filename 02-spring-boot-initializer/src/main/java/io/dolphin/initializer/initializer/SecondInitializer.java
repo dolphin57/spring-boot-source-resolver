@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Description:
+ * @Description: 第二种方式：SpringApplication注入
  * @Author: Eric Liang
  * @Since: 2020-7-11 10:34
  */
