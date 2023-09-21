@@ -15,5 +15,6 @@
     <modules>
         <module>01-spring-boot-source-demo</module>
         <module>02-spring-boot-initializer</module>
+        <module>03-spring-boot-listener</module>
     </modules>
 </project>
