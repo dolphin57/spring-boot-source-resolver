@@ -29,14 +29,24 @@
         <property name="student" ref="student"/>
     </bean>
 
-    <bean id="dog" class="io.dolphin.bean.xml.AnimalFactory" factory-method="getAnimal">
+    <!-- 静态工厂注入 -->
+<!--    <bean id="dog" class="io.dolphin.bean.xml.AnimalFactory" factory-method="getAnimal">-->
+<!--        <constructor-arg value="dog"/>-->
+<!--    </bean>-->
+<!--    <bean id="cat" class="io.dolphin.bean.xml.AnimalFactory" factory-method="getAnimal">-->
+<!--        <constructor-arg value="cat"/>-->
+<!--    </bean>-->
+
+    <!-- 实例工厂注入 -->
+    <bean id="animalFactory" class="io.dolphin.bean.xml.AnimalFactoryInstance"/>
+    <bean id="dog" factory-bean="animalFactory" factory-method="getAnimal">
         <constructor-arg value="dog"/>
     </bean>
-    <bean id="cat" class="io.dolphin.bean.xml.AnimalFactory" factory-method="getAnimal">
+    <bean id="cat" factory-bean="animalFactory" factory-method="getAnimal">
         <constructor-arg value="cat"/>
     </bean>
 
     <bean id="animalService" class="io.dolphin.bean.xml.AnimalService">
-        <property name="animal" ref="dog"/>
+        <property name="animal" ref="cat"/>
     </bean>
 </beans>

@@ -10,6 +10,4 @@ public class AnimalService {
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
-
-
 }
