@@ -9,6 +9,12 @@ public class Student {
 
     private List<String> classList;
 
+    public Student(String name, Integer age, List<String> classList) {
+        this.name = name;
+        this.age = age;
+        this.classList = classList;
+    }
+
     public String getName() {
         return name;
     }

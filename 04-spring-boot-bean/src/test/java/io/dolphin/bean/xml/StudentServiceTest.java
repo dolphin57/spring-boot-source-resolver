@@ -18,14 +18,6 @@ class StudentServiceTest {
     @Autowired
     private StudentService studentService;
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
     void hello() {
         System.out.println(studentService.hello());
