@@ -28,4 +28,15 @@
     <bean id="studentService" class="io.dolphin.bean.xml.StudentService">
         <property name="student" ref="student"/>
     </bean>
+
+    <bean id="dog" class="io.dolphin.bean.xml.AnimalFactory" factory-method="getAnimal">
+        <constructor-arg value="dog"/>
+    </bean>
+    <bean id="cat" class="io.dolphin.bean.xml.AnimalFactory" factory-method="getAnimal">
+        <constructor-arg value="cat"/>
+    </bean>
+
+    <bean id="animalService" class="io.dolphin.bean.xml.AnimalService">
+        <property name="animal" ref="dog"/>
+    </bean>
 </beans>
