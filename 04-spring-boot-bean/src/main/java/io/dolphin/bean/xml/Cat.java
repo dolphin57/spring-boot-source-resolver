@@ -2,7 +2,7 @@ package io.dolphin.bean.xml;
 
 public class Cat extends Animal {
     @Override
-    String getName() {
+    public String getName() {
         return "cat";
     }
 }
