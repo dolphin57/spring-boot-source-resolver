@@ -1,4 +1,4 @@
-package io.dolphin.bean.annotate;
+package io.dolphin.bean.factorybean;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -10,12 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class StudentAnnotateServiceTest {
+class FactoryBeanServiceTest {
     @Autowired
-    private StudentAnnotateService studentService;
+    private FactoryBeanService factoryBeanService;
 
     @Test
     void hello() {
-        System.out.println(studentService.hello());
+        System.out.println(factoryBeanService.hello());
     }
 }

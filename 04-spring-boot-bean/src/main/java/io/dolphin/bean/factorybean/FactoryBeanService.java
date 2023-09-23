@@ -1,12 +1,14 @@
-package io.dolphin.bean.annotate;
+package io.dolphin.bean.factorybean;
 
 import io.dolphin.bean.xml.Animal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StudentAnnotateService {
+public class FactoryBeanService {
     @Autowired
+    @Qualifier("myCat")
     private Animal animal;
 
     public String hello() {
