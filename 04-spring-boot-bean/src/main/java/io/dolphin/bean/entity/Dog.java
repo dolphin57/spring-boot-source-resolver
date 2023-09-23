@@ -1,4 +1,6 @@
-package io.dolphin.bean.xml;
+package io.dolphin.bean.entity;
+
+import io.dolphin.bean.entity.Animal;
 
 public class Dog extends Animal {
     @Override

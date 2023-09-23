@@ -1,7 +1,7 @@
 package io.dolphin.bean.factorybean;
 
-import io.dolphin.bean.xml.Animal;
-import io.dolphin.bean.xml.Cat;
+import io.dolphin.bean.entity.Animal;
+import io.dolphin.bean.entity.Cat;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
 

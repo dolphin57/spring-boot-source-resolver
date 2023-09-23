@@ -1,5 +1,7 @@
 package io.dolphin.bean.xml;
 
+import io.dolphin.bean.entity.Animal;
+
 public class AnimalService {
     private Animal animal;
 

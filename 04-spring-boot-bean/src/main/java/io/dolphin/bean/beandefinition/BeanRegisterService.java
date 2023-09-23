@@ -1,4 +1,4 @@
-package io.dolphin.bean.factorybean;
+package io.dolphin.bean.beandefinition;
 
 import io.dolphin.bean.entity.Animal;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FactoryBeanService {
+public class BeanRegisterService {
     @Autowired
-    @Qualifier("myCat")
+    @Qualifier("monkey")
     private Animal animal;
 
     public String hello() {

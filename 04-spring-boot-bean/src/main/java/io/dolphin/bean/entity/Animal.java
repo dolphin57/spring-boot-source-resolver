@@ -1,4 +1,4 @@
-package io.dolphin.bean.xml;
+package io.dolphin.bean.entity;
 
 public abstract class Animal {
     public abstract String getName();
