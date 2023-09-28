@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeanImportService {
-    @Autowired
-    @Qualifier("bird")
+    @Autowired(required = true)
+    @Qualifier(value = "bird")
     private Animal animal;
 
     public String hello() {
