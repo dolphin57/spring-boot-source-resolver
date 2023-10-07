@@ -20,6 +20,9 @@ public class ResultCommandLineRunner implements CommandLineRunner, EnvironmentAw
         System.out.println(env.getProperty("dolphin.avg.age"));
         System.out.println(env.getProperty("dolphin.website.path"));
         System.out.println(env.getProperty("dolphin.vm.name"));
+        System.out.println(env.getProperty("dolphin.default.name"));
+        System.out.println(env.getProperty("dolphin.active.name"));
+        System.out.println(env.getProperty("dolphin.active2.name"));
     }
 
     @Override
