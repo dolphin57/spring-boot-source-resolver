@@ -20,5 +20,6 @@
         <module>05-spring-boot-startload</module>
         <module>06-spring-boot-property</module>
         <module>07-spring-boot-exception</module>
+        <module>08-spring-boot-start</module>
     </modules>
 </project>
