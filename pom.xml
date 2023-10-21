@@ -21,5 +21,6 @@
         <module>06-spring-boot-property</module>
         <module>07-spring-boot-exception</module>
         <module>08-spring-boot-start</module>
+        <module>09-spring-boot-mybatis-redis</module>
     </modules>
 </project>
