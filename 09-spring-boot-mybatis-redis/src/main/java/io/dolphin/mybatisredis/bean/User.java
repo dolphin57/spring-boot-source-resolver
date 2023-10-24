@@ -60,4 +60,16 @@ public class User {
     public void setVersion(Integer version) {
         this.version = version;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                ", deleteFlag=" + deleteFlag +
+                ", version=" + version +
+                '}';
+    }
 }
