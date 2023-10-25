@@ -13,6 +13,13 @@ public class User {
 
     private Integer version;
 
+    public User() {
+    }
+
+    public User(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

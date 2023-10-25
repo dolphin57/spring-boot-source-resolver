@@ -5,8 +5,11 @@ import io.dolphin.mybatisredis.bean.User;
 import io.dolphin.mybatisredis.bean.UserExample;
 import io.dolphin.mybatisredis.mapper.UserMapper;
 import io.dolphin.mybatisredis.redis.RedisUtil;
+import io.dolphin.mybatisredis.service.UserQueryService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,11 +19,16 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringBootMybatisRedisApplication.class)
 class SpringBootMybatisRedisApplicationTests {
+    private Logger logger = LoggerFactory.getLogger(SpringBootMybatisRedisApplicationTests.class);
+
     @Autowired
     private UserMapper userMapper;
 
     @Autowired
     private RedisUtil redisUtil;
+
+    @Autowired
+    private UserQueryService userQueryService;
 
     @Test
     void contextLoads() {}
@@ -89,5 +97,15 @@ class SpringBootMybatisRedisApplicationTests {
         System.out.println(redisUtil.get("dolphin"));
         Thread.sleep(3000);
         System.out.println(redisUtil.get("dolphin"));
+    }
+
+    @Test
+    public void testQueryRedis() {
+        System.out.println(userQueryService.queryUserById(1));
+        System.out.println(userQueryService.queryUserById(1));
+        System.out.println(userQueryService.queryUserById(2));
+        System.out.println(userQueryService.queryUserById(2));
+        System.out.println(userQueryService.queryUserById(3));
+        System.out.println(userQueryService.queryUserById(3));
     }
 }
