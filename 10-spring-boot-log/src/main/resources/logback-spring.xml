@@ -1,0 +1,43 @@
+<configuration>
+    <contextName>demo</contextName>
+    <property name="LOG_PATH" value="${logging.path-${user.home}/${spring.application.name}/logs"/>
+    <property name="LOG_FILE" value="${logging.file-${LOG_PATH}/application.log}"/>
+
+    <appender name="APPLICATION"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 日志文件名 -->
+        <file>${LOG_FILE}</file>
+
+        <encoder>
+            <pattern>%date{HH:mm:ss} %contextName [%t] %p %logger{36} - %msg%n</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 滚动后的日志文件名 -->
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i.log}</fileNamePattern>
+            <!-- 启动服务时，是否清理历史日志，一般不建议清理 -->
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-false}</cleanHistoryOnStart>
+            <!-- 日志文件，到达多少容量，进行滚动 -->
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-10MB}</maxFileSize>
+            <!-- 日志文件的总大小，0 表示不限制 -->
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-20GB}</totalSizeCap>
+            <!-- 日志文件的保留天数 -->
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-7}</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">　　　　　
+        <encoder>
+            <pattern>%date{HH:mm:ss} %contextName [%t] %p %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+<!--    <appender name="io.dolphin.log.controller" level="error" additional="true">-->
+<!--        <appender-ref ref="STDOUT"/>-->
+<!--    </appender>-->
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="APPLICATION"/>
+    </root>
+
+</configuration>
